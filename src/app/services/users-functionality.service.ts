@@ -8,7 +8,7 @@ export class UserFunctionsService{
     constructor(private http:HttpClient ){}
     
     blockSelected(usersIds:number[]){
-        return this.http.post('http://localhost:5000/users/block',
+        return this.http.post('https://angular-auth-app.onrender.com/users/block',
         {
             usersIds
         }
@@ -16,7 +16,7 @@ export class UserFunctionsService{
     }
 
     unblockSelected(usersIds:number[]){
-        return this.http.post('http://localhost:5000/users/unblock',
+        return this.http.post('https://angular-auth-app.onrender.com/users/unblock',
         {
             usersIds
         }
@@ -24,7 +24,7 @@ export class UserFunctionsService{
     }
 
     deleteUsers(usersIds:number[]){
-        return this.http.post('http://localhost:5000/users/delete',
+        return this.http.post('https://angular-auth-app.onrender.com/users/delete',
         {
             usersIds
         }

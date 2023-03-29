@@ -18,7 +18,7 @@ export class AuthInteceptorService implements HttpInterceptor{
             take(1),
 
             exhaustMap((user)=>{
-                if(req.url!=='http://localhost:5000/users'){
+                if(req.url!=='https://angular-auth-app.onrender.com/users'){
                     return next.handle(req);
                 }
                 

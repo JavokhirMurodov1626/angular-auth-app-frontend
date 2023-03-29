@@ -25,7 +25,7 @@ export class AuthService {
   constructor(private http:HttpClient,private router:Router) {}
 
  signUp(name:string,email:string,password:string){
-    return this.http.post<AuthResponse>('http://localhost:5000/users/register',
+    return this.http.post<AuthResponse>('https://angular-auth-app.onrender.com/users/register',
     {
       name,  
       email,
@@ -36,7 +36,7 @@ export class AuthService {
 
   login(email:string, password:string){
 
-    return this.http.post<AuthResponse>('http://localhost:5000/users/login',
+    return this.http.post<AuthResponse>('https://angular-auth-app.onrender.com/users/login',
     {
       email,
       password

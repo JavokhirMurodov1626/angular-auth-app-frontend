@@ -24,7 +24,7 @@ export class UsersService {
   
   getUsers(){
 
-      return this.http.get<AllUser[]>('http://localhost:5000/users').pipe(catchError(err=>{
+      return this.http.get<AllUser[]>('https://angular-auth-app.onrender.com/users').pipe(catchError(err=>{
 
         let errorMessage='Unknown Error';
 
