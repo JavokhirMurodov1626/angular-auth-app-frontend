@@ -1,0 +1,45 @@
+<div class="row login-form-wrap d-flex justify-content-center">
+    <div *ngIf="isLoading" class="spinner d-flex justify-content-center align-items-center">
+        <app-loading-spinner ></app-loading-spinner>
+    </div>
+    <form class="login-form col-6 g-3" (ngSubmit)="onSubmit(f)" #f="ngForm" >
+        <div class="alert alert-danger" role="alert" *ngIf="error">
+            {{error}} 
+        </div>
+        <h2 class="login-title text-center">Login</h2>
+        <div class="col-md-12 mt-2" >
+            <label for="inputEmail" class="form-label">Email</label>
+            <input 
+            type="email" 
+            class="form-control mb-2" 
+            id="inputEmail" 
+            placeholder="Enter your email"
+            [(ngModel)]="loginUser.email"
+            name="email"
+            required
+            email
+            #email="ngModel"
+            >
+            <span class="error-helper" *ngIf="!email.valid && email.touched">Please enter valid email</span>
+        </div>
+    
+        <div class="col-md-12 mt-2">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input 
+            type="password" 
+            class="form-control mb-2" 
+            id="inputPassword" 
+            placeholder="Password"
+            [(ngModel)]="loginUser.password"
+            name="password" 
+            required
+            #password="ngModel"
+            >
+            <span class="error-helper" *ngIf="!password.valid && password.touched">Please enter valid password</span>
+        </div>
+    
+        <div class="col-12 mt-2">
+            <button type="submit" class="btn btn-primary mt-2" [disabled]="!f.valid">Login</button>
+        </div>
+    </form>
+</div>
